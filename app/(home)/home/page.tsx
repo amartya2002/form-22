@@ -1,3 +1,4 @@
+import { ModeToggle } from "@/components/ui/themeToggle";
 import { UserButton } from "@clerk/nextjs";
 import Link from "next/link";
 
@@ -5,7 +6,52 @@ export default function Home() {
   return (
     <main>
 
+<nav className="w-full mx-auto  border-b dark:border-gray-900 2xl:max-w-7xl  ">
+        <div className="relative flex flex-col w-full p-3 mx-auto  md:items-center md:justify-between md:flex-row md:px-6 lg:px-8  ">
+          <div className="flex flex-row items-center justify-between lg:justify-start">
+            <a className=" tracking-tight text-black uppercase focus:outline-none focus:ring lg:text-2xl text-xl font-semibold dark:text-white" href="/">
+              <span className="lg:text-lg uppecase focus:ring-0">
+                Form 22
+              </span>
+            </a>
+            <div className="items-center md:hidden flex gap-3">
 
+              <button className=" text-gray-400 hover:text-black focus:outline-none focus:text-black ">
+                <svg className="w-6 h-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                  <path className="inline-flex" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                  <path className="hidden" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+
+              </button>
+              <div className="inline-flex items-center gap-3">
+                <ModeToggle />
+                <UserButton afterSignOutUrl="/" />
+
+
+              </div>
+            </div>
+
+          </div>
+          <nav className="flex-col items-center flex-grow hidden md:pb-0 md:flex md:justify-end md:flex-row " >
+
+            <a className="px-2 py-2 text-sm rounded-xl text-gray-500 lg:px-6 md:px-3 hover:text-blue-400 lg:ml-auto hover:bg-gray-50 focus:ring-1 focus:ring-blue-500 dark:text-gray-400 dark:hover:bg-blue-950 dark:hover:text-gray-300 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-700 duration-200 " href="#">
+              Features
+            </a>
+            <a className="px-2 py-2 text-sm rounded-xl text-gray-500 lg:px-6 md:px-3 hover:text-blue-400 hover:bg-gray-50 focus:ring-1 focus:ring-blue-500 dark:text-gray-400 dark:hover:bg-red-950 dark:hover:text-gray-300 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-700 duration-200" href="#">
+              Pricing
+            </a>
+            <a className="px-2 py-2 text-sm rounded-xl text-gray-500 lg:px-6 md:px-3 hover:text-blue-400  hover:bg-gray-50 focus:ring-1 focus:ring-blue-500 dark:text-gray-400 dark:hover:bg-purple-950 dark:hover:text-gray-300 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-700 duration-200" href="#">
+              Contact Us
+            </a>
+
+            <div className="inline-flex items-center gap-3 lg:ml-auto">
+              <ModeToggle />
+              <UserButton afterSignOutUrl="/" />
+            </div>
+            
+          </nav>
+        </div>
+      </nav>
 
       {/* <!-- Hero --> */}
       <div className="relative overflow-hidden before:absolute before:top-0 before:start-1/2 before:bg-[url('https://preline.co/assets/svg/component/squared-bg-element.svg')] before:bg-no-repeat before:bg-top before:w-full before:h-full before:-z-[1] before:transform before:-translate-x-1/2 dark:before:bg-[url('https://preline.co/assets/svg/component/squared-bg-element-dark.svg')]">
@@ -36,7 +82,7 @@ export default function Home() {
 
           {/* <!-- Buttons --> */}
           <div className="mt-8 gap-3 flex justify-center items-center">
-            <UserButton afterSignOutUrl="/" />
+            
 
             <Link className="inline-flex justify-center items-center gap-x-3 text-center bg-gradient-to-tl from-blue-600 to-violet-600 hover:from-violet-600 hover:to-blue-600 border border-transparent text-white text-sm font-medium rounded-full focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white py-3 px-4 dark:focus:ring-offset-gray-800" href="/home">
               <svg className="flex-shrink-0 w-4.5 h-4.5" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
